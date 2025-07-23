@@ -1,7 +1,7 @@
 name: Hello Action
 
 on:
-  #workflow_dispatch:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -10,6 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+          echo "JQ: $(jq --version)"
+          echo "curl: $(curl --version)"
+
       - name: Show System Information
         run: |
           echo "Running on $(uname -s) $(uname -r)"
