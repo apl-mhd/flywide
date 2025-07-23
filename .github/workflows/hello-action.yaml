@@ -1,0 +1,10 @@
+jobs:
+
+  hellow-worlds:
+    runs: ubuntu-latest
+    steps:
+
+      - name: Show System Information
+        run: uname -a
+
+      
