@@ -1,4 +1,4 @@
-jobs:
+ name: Hello Action
 
 on:
   push:
