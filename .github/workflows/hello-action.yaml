@@ -10,5 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Show System Information
+        run: uname -a
+
       - name: Run a simple script
         run: echo "Hello, World!"
