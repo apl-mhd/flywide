@@ -5,11 +5,11 @@ on:
     branches:
       - main
 
-  hellow-worlds:
-    runs: ubuntu-latest
-    steps:
-
-      - name: Show System Information
-        run: uname -a
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    -name: Run a simple script
+      run: echo "Hello, World!" 
 
       
