@@ -1,6 +1,7 @@
  name: Hello Action
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -9,7 +10,7 @@ jobs:
   build:
   runs-on: ubuntu-latest
   steps:
-    -name: Run a simple script
+    - name: Run a simple script
       run: echo "Hello, World!" 
 
       
