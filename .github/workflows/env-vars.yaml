@@ -15,15 +15,16 @@ on:
       - main
 
 jobs:
-
   checkout-example:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: Display file in the Repository
         run: ls -la
+      - name: Show current DIR
+        run: pwd
 
   hello-world:
     runs-on: ubuntu-latest
@@ -36,4 +37,3 @@ jobs:
 
       - name: Run a simple script
         run: echo The username is ${{inputs.username}}
-
