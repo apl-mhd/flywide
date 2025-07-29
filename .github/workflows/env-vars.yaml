@@ -1,0 +1,37 @@
+name: Hello World
+
+env:
+  GLOBAL_VAR: "workflow-level"
+
+on:
+  workflow_dispatch:
+    inputs:
+
+      name:
+        description: 'Name to greet'
+        required: false 
+        default: 'World'
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+          echo "JQ: $(jq --version)"
+          echo "curl: $(curl --version)"
+
+      - name: Show System Information
+        run: |
+          echo "Running on $(uname -s) $(uname -r)"
+          echo "Current User: $(whoami)"
+          echo "System Architecture: $(uname -m)"
+
+      - name: Run a simple script
+        run: echo "The username is ${{inputs.name}}"
