@@ -15,6 +15,13 @@ on:
       - main
 
 jobs:
+
+  checkout-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
   hello-world:
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +33,4 @@ jobs:
 
       - name: Run a simple script
         run: echo The username is ${{inputs.username}}
-        
+
